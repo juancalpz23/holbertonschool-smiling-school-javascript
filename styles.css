@@ -186,6 +186,21 @@
   }
 }
 
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #C271FF;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Quotes Section  */
 
 .quotes {
@@ -340,6 +355,29 @@
     width: 19vw;
   }
 }
+
+/* Carousel item styles for four cards at a time */
+.carousel-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-item .col-lg-3 {
+  flex: 0 0 24%; /* Ensure four items fit within the carousel */
+}
+
+@media screen and (max-width: 1200px) {
+  .carousel-item .col-lg-3 {
+    flex: 0 0 48%; /* Show two cards at a time on medium screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item .col-lg-3 {
+    flex: 0 0 100%; /* Show one card at a time on small screens */
+  }
+}
+
 
 @media screen and (max-width: 1150px) {
   :root {
